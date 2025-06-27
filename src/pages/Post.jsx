@@ -39,6 +39,11 @@ const Post = () => {
 
     const onChangeAddMovie = (e) => {
         const { name, value } = e.target;
+
+        if (name === "msSeason" && !/^\d{0,2}$/.test(value)) return;
+        if (name === "msYear" && !/^\d{0,4}$/.test(value)) return;
+        if (name === "msRating" && !/^\d{0,1}(\.\d{0,1})?$/.test(value)) return;
+
         if (name === "msGenre") {
             setAddMovie((prev) => ({
                 ...prev, [name]: value.split(",").map((genre) => genre.trim())
@@ -99,15 +104,15 @@ const Post = () => {
                             </div>
                             <div className="mb-3 col-6">
                                 <label htmlFor="season" className="form-label">Enter the part/season, enter 0 if movie...</label>
-                                <input type="number" className="form-control" id="season" name="msSeason" value={addMovie.msSeason} onChange={onChangeAddMovie} placeholder="Eg: 0" autoComplete="off" required />
+                                <input type="number" className="form-control" id="season" name="msSeason" value={addMovie.msSeason} onChange={onChangeAddMovie} placeholder="Eg: 0" maxLength={2} autoComplete="off" required />
                             </div>
                             <div className="mb-3 col-6">
                                 <label htmlFor="year" className="form-label">Enter the year...</label>
-                                <input type="text" className="form-control" id="year" name="msYear" value={addMovie.msYear} onChange={onChangeAddMovie} placeholder="Eg: 2014" autoComplete="off" required />
+                                <input type="text" className="form-control" id="year" name="msYear" value={addMovie.msYear} onChange={onChangeAddMovie} placeholder="Eg: 2014" maxLength={4} autoComplete="off" required />
                             </div>
                             <div className="mb-3 col-6">
                                 <label htmlFor="rating" className="form-label">Enter the imdb rating...</label>
-                                <input type="text" className="form-control" id="rating" name="msRating" value={addMovie.msRating} onChange={onChangeAddMovie} placeholder="Eg: 8.7" autoComplete="off" required />
+                                <input type="text" className="form-control" id="rating" name="msRating" value={addMovie.msRating} onChange={onChangeAddMovie} placeholder="Eg: 8.7" maxLength={3} autoComplete="off" required />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="uploadedBy" className="form-label">Select the person who is uploading the...</label>
