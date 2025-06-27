@@ -61,7 +61,7 @@ const Post = () => {
                             <label htmlFor="link" className="form-label">Enter the ott link...</label>
                             <input type="text" className="form-control" id="link" name="msLink" value={addMovie.msLink} onChange={onChangeAddMovie} placeholder="Eg: https://www.primevideo.com/region/eu/detail/Interstellar/0PUNMGZEWOMYFKR1XIGOLTL2YM" />
                         </div>
-                        <div className="mb-3 col-4">
+                        <div className="mb-3 col-6">
                             <label htmlFor="category" className="form-label">Select the categorgy...</label>
                             <select className="form-select" id="category" name="msCategory" value={addMovie.msCategory} onChange={onChangeAddMovie}>
                                 <option value="">---Select---</option>
@@ -70,7 +70,7 @@ const Post = () => {
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        <div className="mb-3 col-4">
+                        <div className="mb-3 col-6">
                             <label htmlFor="type" className="form-label">Select the type...</label>
                             <select className="form-select" id="type" name="msType" value={addMovie.msType} onChange={onChangeAddMovie}>
                                 <option value="">---Select---</option>
@@ -79,23 +79,23 @@ const Post = () => {
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        <div className="mb-3 col-4">
+                        <div className="mb-3 col-6">
                             <label htmlFor="genre" className="form-label">Enter the genre (comma-separated)...</label>
                             <input type="text" className="form-control" id="genre" name="msGenre" value={addMovie.msGenre} onChange={onChangeAddMovie} placeholder="Eg: Science Fiction • Adventure • Intense • Heavy" />
                         </div>
-                        <div className="mb-3 col-3">
+                        <div className="mb-3 col-6">
                             <label htmlFor="season" className="form-label">Enter the part/season, enter 0 if movie...</label>
                             <input type="number" className="form-control" id="season" name="msSeason" value={addMovie.msSeason} onChange={onChangeAddMovie} placeholder="Eg: 0" />
                         </div>
-                        <div className="mb-3 col-3">
+                        <div className="mb-3 col-6">
                             <label htmlFor="year" className="form-label">Enter the year...</label>
                             <input type="text" className="form-control" id="year" name="msYear" value={addMovie.msYear} onChange={onChangeAddMovie} placeholder="Eg: 2014" />
                         </div>
-                        <div className="mb-3 col-3">
+                        <div className="mb-3 col-6">
                             <label htmlFor="rating" className="form-label">Enter the imdb rating...</label>
                             <input type="text" className="form-control" id="rating" name="msRating" value={addMovie.msRating} onChange={onChangeAddMovie} placeholder="Eg: 8.7" />
                         </div>
-                        <div className="mb-3 col-3">
+                        <div className="mb-3">
                             <label htmlFor="uploadedBy" className="form-label">Select the person who is uploading the...</label>
                             <select className="form-select" id="uploadedBy" name="msUploadedBy" value={addMovie.msUploadedBy} onChange={onChangeAddMovie}>
                                 <option value="">---Select the name---</option>
@@ -104,7 +104,7 @@ const Post = () => {
                             </select>
                         </div>
                         <div className="text-center">
-                            <button type="button" className="btn btn-dark col-2" onClick={handleAddMovie}>
+                            <button type="button" className="btn btn-dark" onClick={handleAddMovie}>
                                 {loading ? "Loading" : "Add movie/series"}
                             </button>
                         </div>
