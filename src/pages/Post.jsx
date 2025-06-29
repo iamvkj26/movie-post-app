@@ -13,7 +13,7 @@ const Post = () => {
 
         setLoading(true);
         try {
-            const response = await axios.post("https://calm-fox-62c52a.netlify.app/.netlify/functions/index/api/post", addMovie, {
+            const response = await axios.post("https://movie-backend-app-nfnz.onrender.com/movieseries/post", addMovie, {
                 headers: { "Content-Type": "application/json" }
             });
             if (response.status === 200) {
